@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>LinkedIn Connections</title>
+
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link rel="stylesheet" href="css/jquery.mobile-1.1.0-rc.1.css?n=1" />
+<link rel="shortcut icon" href="css/images/icon_linked.png" />
+<link rel="apple-touch-icon" href="css/images/icon_linked.png" />
+
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/jquery.mobile-1.1.0-rc.1.min.js"></script>
+<script src="js/myConnections.js?n=5998989777960051"></script>
+
+<style type="text/css">
+.prof_img {
+	height: 60px;
+	width: 60px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+</style>
+
+<script type="text/javascript" src="http://platform.linkedin.com/in.js">
+  api_key: ibok6emdhs52
+  authentication: true
+</script>
+
+<script type="text/javascript">
+
+$(function() {
+	
+});
+
+
+</script>
+
+</head>
+<body>
+
+	<!-- ---------------- -->
+	<!-- CONNECTIONS page -->
+	<!-- ---------------- -->
+	<div data-role="page" id="home" data-theme="b">
+
+		<div data-role="header" data-theme="b">
+			<h1>LinkedIn Connections</h1>
+			<a href="#about" data-rel="dialog" data-transition="pop" data-role="button" data-icon="info" class="ui-btn-right" data-iconpos="notext">About</a>
+		</div>
+
+		<div data-role="content">
+
+					<h4>My Connections</h4>
+					<script type="IN/Login" data-onAuth="myConnections.loadConnections"></script>
+
+					<div id="list" data-role="sub-content" style="visibility:hidden">
+						<ul data-role="listview" data-inset="true" id="connections" data-theme="c" data-filter="true" ></ul>
+					</div>
+			
+		</div>
+
+	</div>
+
+
+	<!-- ------------ -->
+	<!-- DETAILS Data -->
+	<!-- ------------ -->
+	<div data-role="page" id="detail" data-add-back-btn="true" data-theme="b">
+
+		<div data-role="header" data-theme="b">
+			<a href="#home" data-role="button" data-icon="arrow-l" class="ui-btn-left" data-transition="slide" data-rel="back" data-iconpos="notext">Back</a>
+			<h1>Profile</h1>
+			<a href="#about" data-rel="dialog" data-transition="pop" data-role="button" data-icon="info" class="ui-btn-right" data-iconpos="notext">About</a>
+		</div>
+		
+		<div data-role="content">
+
+			<div id="divProfile"></div>
+
+		</div>
+		
+	</div>
+	
+	
+	<!-- ---------- -->
+	<!-- ABOUT page -->
+	<!-- ---------- -->
+	<div data-role="page" id="about">
+
+		<div data-role="header" data-theme="b"><h1>About Site</h1></div>
+
+		<div data-role="content" data-theme="b">
+			<div data-role="collapsible-set"> 
+			<div data-role="collapsible" data-collapsed="false"> 
+				<h3>Web Site Overview</h3> 
+				<p>This mobile site is a proof-of-concept, playground, etc. for accessing LinkedIn Connections data.
+				</p> 
+			</div> 
+			<div data-role="collapsible" data-collapsed="true" data-theme="b"> 
+				<h3>Technology</h3> 
+				<p>
+					<ol>
+							<li>Framework: <a href="http://jquerymobile.com/" target="foo">jQuery Mobile</a> (1.1 RC 1)</li>
+							<li>Data: Uses the <a href="https://developer.linkedin.com/" target="foo">LinkedIn Javascript API</a> to retrieve connection information</li>
+					</ol>
+				</p> 
+			</div> 
+		</div>
+		<a href="#home" data-role="button" data-rel="back" data-theme="b" data-inline="true" data-mini="true">Close</a>
+		</div>
+
+	</div>
+ 
+</body>
+</html>
